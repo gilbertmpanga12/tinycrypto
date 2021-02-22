@@ -15,11 +15,13 @@ import { UnionsComponent } from '../pages/unions/unions.component';
 import { ProfileComponent } from '../pages/profile/profile.component';
 import { InvestComponent } from '../pages/invest/invest.component';
 import { NotificationsComponent } from '../pages/notifications/notifications.component';
-
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import { InvestsheetmenuComponent } from '../pages/invest/investsheetmenu/investsheetmenu.component';
 
 
 @NgModule({
-  declarations: [LayoutComponent, DashboardComponent, UnionsComponent, ProfileComponent, InvestComponent, NotificationsComponent],
+  declarations: [LayoutComponent, DashboardComponent, 
+    UnionsComponent, ProfileComponent, InvestComponent, NotificationsComponent,  InvestsheetmenuComponent],
   imports: [
     CommonModule,
     MatSidenavModule,
@@ -30,7 +32,8 @@ import { NotificationsComponent } from '../pages/notifications/notifications.com
     MatListModule,
     MatButtonModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    MatBottomSheetModule
   ]
 })
 export class LayoutModule { }

@@ -18,10 +18,6 @@ export class LayoutComponent {
     icon: 'home',
     url: '/'
   }, {
-    name: 'Invest',
-    icon: 'savings',
-    url: '/invest'
-  }, {
     name: 'Unions',
     icon: 'groups',
     url: '/unions'

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-invest',
   templateUrl: './invest.component.html',
@@ -11,5 +12,7 @@ export class InvestComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
 
 }

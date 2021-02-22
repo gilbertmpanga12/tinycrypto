@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatBottomSheet} from '@angular/material/bottom-sheet';
+import { InvestsheetmenuComponent } from '../invest/investsheetmenu/investsheetmenu.component';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _bottomSheet: MatBottomSheet) { }
 
   ngOnInit(): void {
   }
 
+  openBottomSheet(): void {
+    this._bottomSheet.open(InvestsheetmenuComponent);
+  }
 }
