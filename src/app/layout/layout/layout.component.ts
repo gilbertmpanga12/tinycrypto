@@ -23,8 +23,13 @@ export class LayoutComponent {
     url: '/unions'
   }, {
     name: 'Profile & Settings',
-    icon: 'account_box',
+    icon: 'manage_accounts',
     url: '/profile'
+  },
+  {
+    name: 'History',
+    icon: 'history',
+    url: '/notifications'
   },
   {
     name: 'Log Out',
