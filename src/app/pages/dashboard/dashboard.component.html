@@ -1,19 +1,16 @@
 <div class="container">
-    <div class="">
-        <mat-card class="card-metrics">
-            <mat-card-title>YOUR PORTFOLIO</mat-card-title>
-            <h1>$1000</h1>
+    <ng-container *ngFor="let item of features">
+        <mat-card class="card-metrics" >
+            <mat-card-title>{{item.name}}</mat-card-title>
+            <h1 class="text-400">{{item.currency}}0</h1>
             <br/>
-            <mat-divider></mat-divider>
-            <mat-card-title>BITCOIN</mat-card-title>
-            <h2>0.3BTC</h2>
-
-            <p>
-                <button 
-                (click)="openBottomSheet()"  
-                mat-raised-button color="primary"><strong>START INVESTING</strong></button>
-            </p>
-            
         </mat-card>
+        
+    </ng-container>
+    <div class="container">
+        <p class="text-center">
+            <button class="block-btn rounded-50 uppercase" (click)="openBottomSheet()"
+            mat-raised-button color="accent">Start a portfolio</button>
+        </p>
     </div>
 </div>

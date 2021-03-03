@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatBottomSheet} from '@angular/material/bottom-sheet';
+import { LinkUrls } from 'src/app/models/models';
 import { InvestsheetmenuComponent } from '../invest/investsheetmenu/investsheetmenu.component';
 
 
@@ -9,6 +10,20 @@ import { InvestsheetmenuComponent } from '../invest/investsheetmenu/investsheetm
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  features: LinkUrls[] = [
+    {
+      name: 'Your Portfolio',
+      icon: '',
+      url: '',
+      currency: '$'
+    },
+    {
+      name: 'Bitcoin',
+      icon: '',
+      url: '',
+      currency: 'BTC'
+    }
+  ];
 
   constructor(private _bottomSheet: MatBottomSheet) { }
 

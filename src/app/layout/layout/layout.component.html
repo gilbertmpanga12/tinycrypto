@@ -4,7 +4,7 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
      >
-    <mat-toolbar>{{title}}</mat-toolbar>
+    <mat-toolbar ><span class="text-500">{{title}}</span></mat-toolbar>
     <mat-nav-list>
       
       <mat-list-item *ngFor="let link of links">

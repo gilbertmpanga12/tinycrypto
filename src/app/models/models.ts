@@ -2,6 +2,7 @@ export interface LinkUrls{
     name: string;
     icon: string;
     url: string;
+    currency:string;
 }
 
 export interface Unions{
@@ -11,4 +12,10 @@ export interface Unions{
     participants: number;
     image: string;
     description: string;
+}
+
+export interface Sidebar{
+    name: string;
+    icon: string;
+    url: string;
 }

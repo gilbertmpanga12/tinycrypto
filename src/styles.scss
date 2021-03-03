@@ -1,11 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Poppins', sans-serif; }
 
 // containers
 .container{
     padding-left: 1em;
     padding-right: 1em;
     padding-top: 20px;
+}
+// typography
+h1,h2,h3,h4,h5,h6,p,a,span,div,li,small,div,button,i, .mat-card-title{
+    font-family: 'Poppins', sans-serif !important; 
+}
+
+.text-300{
+    font-weight: 300 !important;
+}
+
+.text-400{
+    font-weight: 400 !important;
+}
+.text-500{
+    font-weight: 500 !important;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.text-center{
+    text-align: center !important;
+}
+
+//buttons
+.rounded-50{
+    border-radius: 25px !important;
 }

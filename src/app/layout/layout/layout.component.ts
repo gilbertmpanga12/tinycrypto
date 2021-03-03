@@ -3,7 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { LinkUrls } from 'src/app/models/models';
+import { Sidebar } from 'src/app/models/models';
 
 @Component({
   selector: 'app-layout',
@@ -13,7 +13,7 @@ import { LinkUrls } from 'src/app/models/models';
 export class LayoutComponent {
   title = environment.title;
 
-  links: LinkUrls[] = [{
+  links: Sidebar[] = [{
     name: 'Your Porfolio',
     icon: 'home',
     url: '/'
@@ -25,6 +25,11 @@ export class LayoutComponent {
     name: 'Profile & Settings',
     icon: 'account_box',
     url: '/profile'
+  },
+  {
+    name: 'Log Out',
+    icon: 'logout',
+    url: '/auth'
   }
 ];
 
