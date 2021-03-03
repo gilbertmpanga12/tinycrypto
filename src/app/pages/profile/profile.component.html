@@ -1,1 +1,28 @@
-<p>profile works!</p>
+<div class="container">
+    <mat-card>
+         <div class="w-80 mx-auto">
+            <p class="text-center">
+                <img [src]="'assets/dodge.jpg'" class="border-rounded" 
+            alt="Your TinyCrypto profile picture"/>
+            </p>
+            <h2 class="text-center">
+            <strong>Shawn991</strong>
+            </h2>
+         </div>
+         <mat-list>
+            <h3 matSubheader>Settings</h3>
+            <mat-list-item *ngFor="let folder of folders">
+               <mat-icon matListIcon color="primary">{{folder.icon}}</mat-icon>
+               <h4 matLine>{{folder.name}}</h4>
+               <p matLine class="demo-2"> {{folder.updated | date}} </p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <h3 matSubheader>Security & Keys</h3>
+            <mat-list-item *ngFor="let note of notes">
+                <mat-icon matListIcon color="primary">{{note.icon}}</mat-icon>
+               <h4 matLine>{{note.name}}</h4>
+               <p matLine class="demo-2"> {{note.updated | date}} </p>
+            </mat-list-item>
+         </mat-list>
+    </mat-card>
+</div>
