@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
       name: 'Bitcoin',
       icon: '',
       url: '',
-      currency: 'BTC'
+      currency: ''
     }
   ];
 

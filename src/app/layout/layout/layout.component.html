@@ -4,19 +4,19 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
      >
-    <mat-toolbar ><span class="text-500">{{title}}</span></mat-toolbar>
+    <mat-toolbar><span class="text-500"><strong>{{title}}</strong></span></mat-toolbar>
     <mat-nav-list>
-      
+      <mat-divider class="divider-mb"></mat-divider>
       <mat-list-item *ngFor="let link of links">
-        <a matLine [routerLink]="link.url" (click)="drawer.close()">{{ link.name }}</a>
-        <button mat-icon-button>
-           <mat-icon>{{link.icon}}</mat-icon>
-        </button>
+        <mat-icon  matListIcon>{{link.icon}}</mat-icon>
+       
+        <a matLine [routerLink]="link.url" class="lists" (click)="drawer.close()">{{ link.name }}</a>
+        
      </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" class="mat-elevation-z2">
       <button
         type="button"
         aria-label="Toggle sidenav"

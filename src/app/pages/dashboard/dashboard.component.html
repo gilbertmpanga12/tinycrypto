@@ -2,7 +2,7 @@
     <ng-container *ngFor="let item of features">
         <mat-card class="card-metrics" >
             <mat-card-title>{{item.name}}</mat-card-title>
-            <h1 class="text-400">{{item.currency}}0</h1>
+            <h1 class="text-400"><small class="caps-petite">{{item.currency}}</small>0</h1>
             <br/>
         </mat-card>
         
@@ -10,7 +10,7 @@
     <div class="container">
         <p class="text-center">
             <button class="block-btn rounded-50 uppercase" (click)="openBottomSheet()"
-            mat-raised-button color="accent">Start a portfolio</button>
+            mat-raised-button color="accent">create new portfolio</button>
         </p>
     </div>
 </div>
