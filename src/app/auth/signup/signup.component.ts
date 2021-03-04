@@ -14,6 +14,6 @@ export class SignupComponent implements OnInit {
   }
 
   signUp(f: NgForm){
-
+    console.log('tapped');
   }
 }
