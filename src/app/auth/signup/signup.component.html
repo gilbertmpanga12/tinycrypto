@@ -1,45 +1,50 @@
 <div class="container">
     <mat-card>
         <h1 class="text-center">Create your account</h1>
-        <div class="example-container">
+        <form #f="ngForm" (ngSubmit)="signUp()">
+          <div class="example-container">
             <mat-form-field appearance="fill" class="w-100">
               <mat-label>First name</mat-label>
-              <input matInput type="number" class="example-right-align">
-              <span matPrefix>$&nbsp;</span>
-              <span matSuffix>.00</span>
+              <input matInput name="firstName" class="example-right-align"required 
+               ngModel #firstNameValid="ngModel">
+              <mat-error *ngIf="firstNameValid.invalid && firstNameValid.touched">First name required*</mat-error>
             </mat-form-field>
           
             <mat-form-field appearance="fill" class="w-100">
               <mat-label>Last name</mat-label>
-              <input matInput type="number" class="example-right-align">
-              <span matPrefix>$&nbsp;</span>
-              <span matSuffix>.00</span>
+              <input matInput name="lastName" class="example-right-align" 
+              ngModel #lastNameValid="ngModel" required>
+              <mat-error *ngIf="lastNameValid.invalid && lastNameValid.touched">Last name required*</mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="fill" class="w-100">
                 <mat-label>Email</mat-label>
-                <input matInput type="number" class="example-right-align">
-                <span matPrefix>$&nbsp;</span>
-                <span matSuffix>.00</span>
+                <input matInput type="email" name="email" class="example-right-align" 
+                email ngModel #emailValid="ngModel" required>
+                <mat-error *ngIf="emailValid.invalid && emailValid.touched">Please enter a correct email e.g Johndoe@example.com</mat-error>
               </mat-form-field>
 
             <mat-form-field appearance="fill" class="w-100">
                 <mat-label>Password</mat-label>
-                <input matInput type="number" class="example-right-align">
-                <span matPrefix>$&nbsp;</span>
-                <span matSuffix>.00</span>
+                <input matInput type="password" class="example-right-align" name="password" 
+                ngModel #passwordValid="ngModel" min="6" required>
+                <button mat-icon-button matSuffix type="button" (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon></button>
+                  <mat-error *ngIf="passwordValid.invalid && passwordValid.touched">Please enter a password and must be at least 6 characters</mat-error>
               </mat-form-field>
           </div>
+          <br/>
 <p>
     I certify that I am 18 years of age or older, and agree to the User Agreement and Privacy Policy.
 </p>
 <p class="text-center">
-    <button mat-raised-button class="w-100 rounded-50" color="primary">Create Account</button>
+    <button type="submit" mat-raised-button class="w-100 rounded-50" color="primary">Create Account</button>
 </p>
 
+        </form>
           <br/>
          <div>
-             <span>Already have a Coinbase account?<a [routerLink]="['/auth','signin']">Sign in</a></span>
+             <span>Already have a TinyCrypto account?<a [routerLink]="['/auth','signin']">&nbsp;Sign in</a></span>
        
          </div>
     </mat-card>
