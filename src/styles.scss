@@ -30,6 +30,12 @@ body { margin: 0; font-family: 'Poppins', sans-serif; }
 .absolute{
     position: absolute;
 }
+.mt-15{
+    margin-top: 15% !important;
+}
+.mt-3{
+    margin-top: 3px !important;
+}
 
 // typography
 h1,h2,h3,h4,h5,h6,p,a,span,div,li,small,div,button,i, .mat-card-title{
@@ -67,3 +73,9 @@ h1,h2,h3,h4,h5,h6,p,a,span,div,li,small,div,button,i, .mat-card-title{
 .divider-mb{
     margin-bottom: 1em !important;
 }
+
+.wrapper{
+    background-image: radial-gradient(#444CF7 1px, #E5E5F7 1px);
+    background-size: 20px 20px;
+    height: 100%;
+    }
