@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-forgotpassword',
@@ -12,4 +13,7 @@ export class ForgotpasswordComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  forgotPassword(f: NgForm){
+    
+  }
 }
