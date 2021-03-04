@@ -34,7 +34,7 @@ export class LayoutComponent {
   {
     name: 'Log Out',
     icon: 'logout',
-    url: '/auth'
+    url: '/auth/signin'
   }
 ];
 

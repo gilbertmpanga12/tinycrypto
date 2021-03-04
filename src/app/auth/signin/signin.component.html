@@ -1,0 +1,29 @@
+<div class="container">
+    <mat-card>
+        <h1 class="text-center">Sign in to TinyCrypto</h1>
+        <div class="example-container">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>BTC invested</mat-label>
+              <input matInput type="number" class="example-right-align">
+              <span matPrefix>$&nbsp;</span>
+              <span matSuffix>.00</span>
+            </mat-form-field>
+          
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Amount expected</mat-label>
+              <input matInput type="number" class="example-right-align">
+              <span matPrefix>$&nbsp;</span>
+              <span matSuffix>.00</span>
+            </mat-form-field>
+          </div>
+
+<p class="text-center">
+    <button mat-raised-button class="w-100 rounded-50" color="primary">SIGN IN</button>
+</p>
+          <br/>
+         <div>
+             <span><a [routerLink]="['/auth','forgot-password']">Forgot Password</a></span>
+             <span><a [routerLink]="['/auth','signup']">Don't have an account</a></span>
+         </div>
+    </mat-card>
+</div>

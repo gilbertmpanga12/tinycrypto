@@ -20,6 +20,12 @@ body { margin: 0; font-family: 'Poppins', sans-serif; }
 .w-100{
     width: 100%;
 }
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
 
 // typography
 h1,h2,h3,h4,h5,h6,p,a,span,div,li,small,div,button,i, .mat-card-title{

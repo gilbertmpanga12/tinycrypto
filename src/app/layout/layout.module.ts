@@ -17,11 +17,16 @@ import { InvestComponent } from '../pages/invest/invest.component';
 import { NotificationsComponent } from '../pages/notifications/notifications.component';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { InvestsheetmenuComponent } from '../pages/invest/investsheetmenu/investsheetmenu.component';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogviewComponent } from '../pages/dialogview/dialogview.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [LayoutComponent, DashboardComponent, 
-    UnionsComponent, ProfileComponent, InvestComponent, NotificationsComponent,  InvestsheetmenuComponent],
+    UnionsComponent, ProfileComponent, InvestComponent,
+     NotificationsComponent,  InvestsheetmenuComponent, DialogviewComponent],
   imports: [
     CommonModule,
     MatSidenavModule,
@@ -33,7 +38,12 @@ import { InvestsheetmenuComponent } from '../pages/invest/investsheetmenu/invest
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
-    MatBottomSheetModule
-  ]
+    MatBottomSheetModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule
+  ],
+  entryComponents: [DialogviewComponent]
 })
 export class LayoutModule { }
