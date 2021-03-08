@@ -17,11 +17,7 @@ export class LayoutComponent {
     name: 'Your Porfolio',
     icon: 'home',
     url: '/'
-  }, {
-    name: 'Unions',
-    icon: 'groups',
-    url: '/unions'
-  }, {
+  }, 
     name: 'Profile & Settings',
     icon: 'manage_accounts',
     url: '/profile'
@@ -37,7 +33,13 @@ export class LayoutComponent {
     url: '/auth/signin'
   }
 ];
-
+/*
+{
+    name: 'Unions',
+    icon: 'groups',
+    url: '/unions'
+  }, {
+*/
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),

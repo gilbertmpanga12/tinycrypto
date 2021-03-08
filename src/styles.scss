@@ -2,6 +2,8 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Poppins', sans-serif; }
+// colors
+$primaryColor:#34D399;
 
 // containers
 .container{
@@ -61,6 +63,10 @@ h1,h2,h3,h4,h5,h6,p,a,span,div,li,small,div,button,i, .mat-card-title{
     text-align: center !important;
 }
 
+.text-white{
+    color: #fff !important;
+}
+
 //buttons
 .rounded-50{
     border-radius: 25px !important;
@@ -79,3 +85,32 @@ h1,h2,h3,h4,h5,h6,p,a,span,div,li,small,div,button,i, .mat-card-title{
     background-size: 20px 20px;
     height: 100%;
     }
+
+//overrides
+.mat-raised-button.mat-accent{
+    background-color: $primaryColor !important;
+    color:#fff !important;
+}
+.mat-toolbar.mat-primary {
+    background: $primaryColor;
+    color: #fff;
+}
+
+.mat-icon.mat-primary {
+    color: $primaryColor !important;
+}
+
+.block-btn{
+    width: 90% !important;
+    padding-top: 10px !important;
+    padding-bottom: 2px !important;
+    padding-right: 11px !important;
+    padding-bottom: 11px !important;
+    line-height: 1.5rem !important;
+    border-width: 1px !important;
+    font-weight: 600 !important;
+    color: rgba(255,255,255,var(--tw-text-opacity)) !important;
+    margin-top: -10px !important;
+
+}
+

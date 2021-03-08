@@ -32,15 +32,15 @@
           </div>
         </mat-card-content>
         
-
+        <br/>
 <p class="text-center">
-    <button mat-raised-button type="submit" class="w-100 rounded-50" color="accent">SIGN IN</button>
+    <button mat-raised-button type="submit" class="w-100 rounded-50 block-btn" color="accent">SIGN IN</button>
 </p>
        </form>
           <br/>
          <div>
-             <span><a [routerLink]="['/auth','forgot-password']">Forgot Password</a></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             <span><a [routerLink]="['/auth','signup']">Don't have an account</a></span>
+             <span><a [routerLink]="['/auth','forgot-password']" >Forgot Password</a></span>
+             <a [routerLink]="['/auth','signup']" style="padding-left:12%;">Don't have an account</a>
          </div>
     </mat-card>
 </div>

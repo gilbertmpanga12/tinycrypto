@@ -1,15 +1,9 @@
 .card-metrics{
     height: 150px;
     margin-bottom: 1.5em;
+    border-radius: 20px;
 }
 
-.block-btn{
-    width: 90%;
-    padding-top:2px;
-    padding-bottom: 2px;
-    padding-right: 3px;
-    padding-bottom: 3px;
-}
 
 .caps-petite{
     font-size: 12px !important;
@@ -23,4 +17,7 @@
     top: 9px;
     left: 8px;
     position: absolute;
+}
+.currency-styles{
+    padding-top:8px;font-size:2.8em;
 }
