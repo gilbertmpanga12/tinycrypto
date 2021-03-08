@@ -5,10 +5,15 @@
       <span mat-line>Add to a note</span>
     </a>
   
-    <a href="https://docs.google.com/" mat-list-item (click)="openLink($event)">
-      <mat-icon color="primary">trending_up</mat-icon>
-      <span mat-line>Alert, me when price is up</span>
-      <span mat-line>Embed in a document</span>
-    </a>
+    <form [formGroup]="alertFormGroup">
+      <a  mat-list-item (click)="changeAlertSettings(checkedvalue.checked)">
+        <mat-checkbox class="example-margin"
+        color="accent"
+        formControlName="auto_alerts" #checkedvalue
+       ></mat-checkbox>
+        <span mat-line>Alert, me when price is up</span>
+        <span mat-line>Embed in a document</span>
+      </a>
+    </form>
   
    </mat-nav-list>

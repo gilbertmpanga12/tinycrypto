@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogviewComponent implements OnInit {
   hide = true;
+  currencies: string[] = ['UGX', 'USD', 'GBP', 'EUR'];
+  currency: string = 'UGX';
   constructor() { }
 
   ngOnInit(): void {

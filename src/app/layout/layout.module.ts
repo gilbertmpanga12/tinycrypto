@@ -11,6 +11,8 @@ import {LayoutRoutingModule} from './layout-routing.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from '../pages/dashboard/dashboard.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSelectModule} from '@angular/material/select';
 
 import { ProfileComponent } from '../pages/profile/profile.component';
 import { InvestComponent } from '../pages/invest/invest.component';
@@ -20,7 +22,7 @@ import { InvestsheetmenuComponent } from '../pages/invest/investsheetmenu/invest
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogviewComponent } from '../pages/dialogview/dialogview.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
@@ -42,7 +44,10 @@ import {MatInputModule} from '@angular/material/input';
     MatDialogModule,
     MatFormFieldModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatCheckboxModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   entryComponents: [DialogviewComponent]
 })
