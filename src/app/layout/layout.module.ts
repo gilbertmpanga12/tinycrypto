@@ -11,7 +11,7 @@ import {LayoutRoutingModule} from './layout-routing.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from '../pages/dashboard/dashboard.component';
-import { UnionsComponent } from '../pages/unions/unions.component';
+
 import { ProfileComponent } from '../pages/profile/profile.component';
 import { InvestComponent } from '../pages/invest/invest.component';
 import { NotificationsComponent } from '../pages/notifications/notifications.component';
@@ -25,7 +25,7 @@ import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [LayoutComponent, DashboardComponent, 
-    UnionsComponent, ProfileComponent, InvestComponent,
+     ProfileComponent, InvestComponent,
      NotificationsComponent,  InvestsheetmenuComponent, DialogviewComponent],
   imports: [
     CommonModule,

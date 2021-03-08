@@ -18,7 +18,7 @@ export class LayoutComponent {
     icon: 'home',
     url: '/'
   }, 
-    name: 'Profile & Settings',
+    {name: 'Profile & Settings',
     icon: 'manage_accounts',
     url: '/profile'
   },
@@ -38,7 +38,7 @@ export class LayoutComponent {
     name: 'Unions',
     icon: 'groups',
     url: '/unions'
-  }, {
+  }, 
 */
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
