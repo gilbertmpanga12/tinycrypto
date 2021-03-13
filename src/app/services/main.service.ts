@@ -25,7 +25,7 @@ export class MainService {
   }
 
   forgotPassword(email: string){
-    return this.http.post(`${environment.firebase}sendOobCode?key=${environment.API_KEY}`, 
+    return this.http.post<{email: string}>(`${environment.firebase}sendOobCode?key=${environment.API_KEY}`, 
     {email, equestType: "PASSWORD_RESET"});
   }
 
