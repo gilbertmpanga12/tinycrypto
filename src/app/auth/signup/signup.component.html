@@ -40,11 +40,15 @@
             </div>
             <br/>
   <p>
-      I certify that I am 18 years of age or older, and agree to the User Agreement and Privacy Policy.
+    By registering, I certify that I am 18 years of age or older, and agree to the User Agreement and Privacy Policy.
   </p>
 <br/>
   <p class="text-center">
-      <button type="submit" mat-raised-button class="w-100 rounded-50 mt-3 block-btn" color="accent">CREATE ACCOUNT</button>
+      <button type="submit" 
+      [class.spinner]="isLoading" [disabled]="isLoading || f.form.invalid"
+      mat-raised-button 
+      class="w-100 rounded-50 mt-3 block-btn" 
+      color="primary"><span [hidden]="isLoading">CREATE ACCOUNT</span></button>
   </p>
   
           </form>

@@ -16,7 +16,7 @@ export class MainService {
   }
 
   signUp(email: string, password: string){
-    return this.http.post(`${environment.firebase}signUp?key=${environment.API_KEY}`, {email, password, returnSecureToken: true});
+    return this.http.post<FirebaseUser>(`${environment.firebase}signUp?key=${environment.API_KEY}`, {email, password, returnSecureToken: true});
   }
 
   signIn(email: string, password: string){
