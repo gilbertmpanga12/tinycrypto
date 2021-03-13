@@ -11,6 +11,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {LayoutModule} from '@angular/cdk/layout';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatSnackBarModule,
+    LayoutModule
   ]
 })
 export class AuthModule { }

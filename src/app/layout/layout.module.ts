@@ -24,6 +24,8 @@ import { DialogviewComponent } from '../pages/dialogview/dialogview.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [LayoutComponent, DashboardComponent, 
@@ -47,7 +49,8 @@ import {MatInputModule} from '@angular/material/input';
     MatInputModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule
   ],
   entryComponents: [DialogviewComponent]
 })

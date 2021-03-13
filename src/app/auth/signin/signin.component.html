@@ -34,7 +34,11 @@
         
         <br/>
 <p class="text-center">
-    <button mat-raised-button type="submit" class="w-100 rounded-50 block-btn" color="accent">SIGN IN</button>
+    <button mat-raised-button 
+    [class.spinner]="isLoading" [disabled]="isLoading || f.form.invalid"
+
+    type="submit" class="w-100 rounded-50 block-btn" color="primary">
+    <span [hidden]="isLoading" style="color:#fff!important;">Sign in</span></button>
 </p>
        </form>
           <br/>

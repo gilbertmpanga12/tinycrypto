@@ -111,6 +111,28 @@ h1,h2,h3,h4,h5,h6,p,a,span,div,li,small,div,button,i, .mat-card-title{
     font-weight: 600 !important;
     color: rgba(255,255,255,var(--tw-text-opacity)) !important;
     margin-top: -10px !important;
+    height: 45px !important;
 
 }
 
+
+// spinners
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+  }
+  
+  .spinner:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    border-top-color: #1F2937;
+    animation: spinner .8s linear infinite;
+  }

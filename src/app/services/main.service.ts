@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { FirebaseUser } from '../models/models';
 
 @Injectable({
   providedIn: 'root'
@@ -15,22 +16,28 @@ export class MainService {
   }
 
   signUp(email: string, password: string){
-    return this.http.post(`signUp?key=${environment.API_KEY}`, {email, password, returnSecureToken: true});
+    return this.http.post(`${environment.firebase}signUp?key=${environment.API_KEY}`, {email, password, returnSecureToken: true});
   }
 
   signIn(email: string, password: string){
-    return this.http.post(`signInWithPassword?key=${environment.API_KEY}`, 
+    return this.http.post<FirebaseUser>(`${environment.firebase}signInWithPassword?key=${environment.API_KEY}`, 
     {email, password, returnSecureToken: true});
   }
 
   forgotPassword(email: string){
-    return this.http.post(`sendOobCode?key=${environment.API_KEY}`, 
+    return this.http.post(`${environment.firebase}sendOobCode?key=${environment.API_KEY}`, 
     {email, equestType: "PASSWORD_RESET"});
   }
 
   verifyPasswordReset(oobCode: string){
-    return this.http.post(`resetPassword?key=${environment.API_KEY}`, 
+    return this.http.post(`${environment.firebase}resetPassword?key=${environment.API_KEY}`, 
     {oobCode});
   }
+
+  storeUser(user: FirebaseUser){
+    localStorage.setItem('crypto_user', JSON.stringify(user));
+  }
+
+  
 
 }

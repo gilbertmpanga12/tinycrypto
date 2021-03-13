@@ -19,3 +19,12 @@ export interface Sidebar{
     icon: string;
     url: string;
 }
+
+export interface FirebaseUser{
+    idToken: string;
+    email:  string;
+    refreshToken: string;
+    expiresIn: string;
+    localId: string;
+}
+
