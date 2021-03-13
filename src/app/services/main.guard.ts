@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanActivateChild, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-
-
-import { take, map, tap} from 'rxjs/operators';
+// import { take, map, tap} from 'rxjs/operators';
 import { MainService } from './main.service';
-// CanActivate,
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +15,7 @@ export class MainGuard implements  CanActivateChild {
     if(this.service.getUser()){
       return true;
     }else{
-      this.router.navigate(['/auth']);
+      this.router.navigate(['/auth', 'signin']);
       return false;
     }
     

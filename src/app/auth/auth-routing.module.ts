@@ -4,7 +4,12 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { SignInComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 
-const routes: Routes = [{
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/auth/signin'
+  },
+  {
   path: 'signin',
   component: SignInComponent
 },
@@ -15,7 +20,8 @@ const routes: Routes = [{
 {
   path: 'forgot-password',
   component: ForgotpasswordComponent
-}];
+}
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
