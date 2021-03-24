@@ -1,28 +1,57 @@
-<div class="container">
-    <mat-card>
-         <div class="w-80 mx-auto">
-            <p class="text-center">
-                <img [src]="'assets/dodge.jpg'" class="border-rounded" 
-            alt="Your TinyCrypto profile picture"/>
+<div class="container wrapper-container">
+    <header class="header">Profile</header>
+    <section>
+       <button class="profile-btn">
+<div class="profile-btn-outer">
+<div class="profile-btn-inner">
+   <img class="sc-lhVmIH bDQLQK" src="assets/robot.e2754931.png">
+</div>
+</div>
+       </button>
+
+       <div class="address">
+          <label>Wallet Address</label>
+          <span class="address-con">
+            <img src="assets/blockstack-icon.9666d5ae.svg" class="sc-ipXKqB ZvDpE">
+            <a href="https://explorer.blockstack.org/name/" target="_blank" 
+            class="address-text">xkksakdlalkncakalfkrdkadksacma</a>
+          </span>
+       </div>
+
+       <div class="username-wrapper">
+          <label>Settings & Addresses</label>
+       </div>
+
+       <mat-card class="actions-panel">
+         <form>
+            <p>
+               <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Bitcoin Address</mat-label>
+                  <input matInput type="text" 
+                  value="xncjajwaxlflapenf"
+                  class="example-right-align">
+                  <mat-icon matSuffix>content_copy</mat-icon>
+                </mat-form-field>
             </p>
-            <h2 class="text-center">
-            <strong>Shawn991</strong>
-            </h2>
-         </div>
-         <mat-list>
-            <h3 matSubheader>Settings</h3>
-            <mat-list-item *ngFor="let folder of folders">
-               <mat-icon matListIcon color="primary">{{folder.icon}}</mat-icon>
-               <h4 matLine>{{folder.name}}</h4>
-               <p matLine class="demo-2"> {{folder.updated | date}} </p>
-            </mat-list-item>
-            <mat-divider></mat-divider>
-            <h3 matSubheader>Security & Keys</h3>
-            <mat-list-item *ngFor="let note of notes">
-                <mat-icon matListIcon color="primary">{{note.icon}}</mat-icon>
-               <h4 matLine>{{note.name}}</h4>
-               <p matLine class="demo-2"> {{note.updated | date}} </p>
-            </mat-list-item>
-         </mat-list>
-    </mat-card>
+            <p>
+               <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Change Username</mat-label>
+                  <input matInput type="text" class="example-right-align">
+                </mat-form-field>
+            </p>
+
+            <p>
+               <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Change Currency</mat-label>
+                  <mat-select>
+                    <mat-option *ngFor="let currency_text of currencies" 
+                    [value]="currency" (click)="currency = currency_text">
+                      {{currency_text}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+            </p>
+         </form>
+       </mat-card>
+    </section>
 </div>

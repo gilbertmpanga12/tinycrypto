@@ -1,9 +1,81 @@
-.border-rounded{
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+.wrapper-container{
+    background-color: #f7f7f7;
+    height: 100%;
+}
+.header{
+font-size: 1.5rem;
+font-weight: bold;
+margin-bottom: 2.5rem;
+}
+.profile-btn{
+position: relative;
+width: 8rem;
+height: 8rem;
+background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
+border: 0px none;
+margin-bottom: 3.125rem;
+cursor: pointer;
+.profile-btn-outer{
+    width: 8rem;
+    height: 8rem;
+    
+    }
 }
 
-.petite{
-    font-size: 15px !important;
+
+.profile-btn-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+    border-radius: 100%;
+    overflow: hidden;
 }
+
+.address{
+    margin-bottom: 1.5625rem;
+padding-left: 1.5625rem;
+label{
+    display: block;
+margin-bottom: 0.625rem;
+font-size: 0.875rem;
+line-height: 1.0625rem;
+color: rgb(146, 146, 157);
+}
+}
+
+.address-con{
+    position: relative;
+display: block;
+font-size: 0.875rem;
+line-height: 1.5rem;
+color: rgb(25, 28, 31);
+padding: 0px;
+background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
+border: 0px none;
+text-align: left;
+}
+.address-text{
+    text-decoration: none;
+color: rgb(25, 28, 31);
+}
+
+.username-wrapper{
+    margin-bottom: 1.5625rem;
+padding-left: 1.5625rem;
+label{
+    display: block;
+margin-bottom: 0.625rem;
+font-size: 0.875rem;
+line-height: 1.0625rem;
+color: rgb(146, 146, 157);
+}
+}
+
+.actions-panel{
+    background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+border-radius: 1.25rem;
+padding: 1.5625rem;
+margin-bottom: 1.25rem;
+}
+
