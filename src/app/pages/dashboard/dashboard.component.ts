@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {MatBottomSheet} from '@angular/material/bottom-sheet';
+import { MatDialog } from '@angular/material/dialog';
 import { LinkUrls } from 'src/app/models/models';
-import { InvestsheetmenuComponent } from '../invest/investsheetmenu/investsheetmenu.component';
+import { DialogviewComponent } from '../dialogview/dialogview.component';
+
+
 
 
 @Component({
@@ -25,13 +27,26 @@ export class DashboardComponent implements OnInit {
     }
   ];
 
-  constructor(private _bottomSheet: MatBottomSheet) { }
+  constructor(
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
   
-  openBottomSheet(): void {
-    this._bottomSheet.open(InvestsheetmenuComponent).afterDismissed();
+  // openBottomSheet(): void {
+  //   this._bottomSheet.open(InvestsheetmenuComponent).afterDismissed();
+  // }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogviewComponent, {
+      width: '100%',
+      data: {}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.animal = result;
+    });
   }
 }

@@ -1,9 +1,99 @@
+.wrapper-container{
+    background-color: #f7f7f7;
+    height: 100%;
+}
 .card-metrics{
-    height: 150px;
+    grid-area: total-balance;
+    padding: 2rem 1.563rem;
+    background: rgb(255, 255, 255) none repeat scroll 0% 0%;
     margin-bottom: 1.5em;
-    border-radius: 20px;
+    border-radius: 1.25rem;
+    .card-header{
+    font-size: 0.75rem;
+    line-height: 0.938rem;
+    color: rgb(146, 146, 157);
+    }
+    
+}
+.metric-count{
+    font-weight: bold;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    }
+.bitcoin-card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    border-radius: 1.25rem;
+    grid-area: accounts / accounts / accounts / accounts;
+    padding: 1.3125rem 1.0625rem 0.9375rem 0.9375rem;
+    .bitcoin-header{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 1.5625rem;
+    padding: 0px 0.8125rem 0px 0.9375rem;
+    }
+}
+.bitcoin-txt{
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    color: rgb(146, 146, 157);
 }
 
+.bitcoin-link{
+    position: relative;
+    display: block;
+    width: 2.25rem;
+    height: 1.5625rem;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 1.6875rem;
+    background: rgb(241, 241, 241);
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    transition: background 0.15s ease-in 0s;
+
+}
+
+.bitcoin-count-panel{
+    border: 0px none;
+background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
+display: flex;
+-moz-box-align: center;
+align-items: center;
+text-align: left;
+width: 100%;
+padding: 0.8125rem 1rem 0.8125rem 0.625rem;
+border-radius: 2.375rem;
+transition: background-color 0.15s ease-in 0s;
+cursor: pointer;
+.panel-1{
+position: relative;
+display: inline-block;
+margin-right: 0.9375rem;
+line-height: 1;
+}
+.panel-2{
+    font-size: 1rem;
+line-height: 1rem;
+font-weight: 600;
+margin-top: -0.0625rem;
+span{
+    display: inline-block;
+margin-bottom: 0.0625rem;
+font-size: 1rem;
+line-height: 1rem;
+font-weight: 600;
+
+}
+}
+}
 
 .caps-petite{
     font-size: 12px !important;
@@ -20,4 +110,45 @@
 }
 .currency-styles{
     padding-top:8px;font-size:2.8em;
+}
+
+.flex-card{
+display: flex;
+-moz-box-align: center;
+align-items: center;
+text-align: left;
+background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
+border: 0px none;
+cursor: pointer;
+padding: 0.875rem 1.1875rem;
+color: rgb(25, 28, 31);
+text-decoration: none;
+border-radius: 2.375rem;
+transition: background 0.15s ease-in 0s;
+width: 100%;
+.action-icon{
+    position: relative;
+display: inline-block;
+margin-right: 0.9375rem;
+line-height: 1;
+}
+.action-text{
+    font-size: 1rem;
+line-height: 1rem;
+font-weight: 600;
+margin-top: -0.0625rem;
+}
+.span-1{
+    display: inline-block;
+  margin-bottom: 0.0625rem;
+  font-family: 'Poppins', sans-serif !important;
+}
+.span-2{
+display: block;
+font-size: 0.75rem;
+line-height: 1.8rem;
+color: rgb(146, 146, 157);
+font-weight: 400;
+font-family: 'Poppins', sans-serif !important;
+}
 }

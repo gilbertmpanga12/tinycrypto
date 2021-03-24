@@ -6,8 +6,8 @@ import { MainGuard } from './services/main.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./layout/layout.module').then((m) => m.LayoutModule),
-    canActivateChild: [MainGuard]
+    loadChildren: () => import('./layout/layout.module').then((m) => m.LayoutModule)
+    // canActivateChild: [MainGuard]
   },
   {
     path: 'auth',
