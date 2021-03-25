@@ -8,10 +8,11 @@
     <mat-toolbar><span class="text-500"><strong>{{title}}</strong></span></mat-toolbar>
     <mat-nav-list>
       <mat-divider class="divider-mb"></mat-divider>
-      <mat-list-item *ngFor="let link of links">
+      <mat-list-item *ngFor="let link of links" (click)="navigate(drawer, link.url)">
         <mat-icon  matListIcon>{{link.icon}}</mat-icon>
        
-        <a matLine [routerLink]="link.url" class="lists" (click)="drawer.close()">{{ link.name }}</a>
+        <a matLine class="lists" 
+        >{{ link.name }}</a>
         
      </mat-list-item>
     </mat-nav-list>
@@ -26,7 +27,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span routerLink="/" class="cursor-pointer outline-none">{{title}}</span>
+      <span routerLink="/" class="cursor-pointer outline-none" *ngIf="(isHandset$ | async)">{{title}}</span>
       <span class="example-spacer"></span>
       <button mat-icon-button class="example-icon favorite-icon" 
       routerLink="/notifications"

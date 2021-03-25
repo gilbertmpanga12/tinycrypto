@@ -1,57 +1,60 @@
-<div class="container wrapper-container">
-    <header class="header">Profile</header>
-    <section>
-       <button class="profile-btn">
-<div class="profile-btn-outer">
-<div class="profile-btn-inner">
-   <img class="sc-lhVmIH bDQLQK" src="assets/robot.e2754931.png">
-</div>
-</div>
-       </button>
+<div class="container wrapper-container ">
+   <div class="w-50 mx-auto">
+      <header class="header">Profile & Settings</header>
+      <section>
+         <button class="profile-btn">
+   <div class="profile-btn-outer">
+   <div class="profile-btn-inner">
+     <img class="sc-lhVmIH bDQLQK" src="assets/robot.e2754931.png">
+   </div>
+   </div>
+         </button>
+   
+         <div class="address">
+            <label>Wallet Address</label>
+            <span class="address-con">
+              <img src="assets/blockstack-icon.9666d5ae.svg" class="sc-ipXKqB ZvDpE">
+              <a href="https://explorer.blockstack.org/name/" target="_blank" 
+              class="address-text">xkksakdlalkncakalfkrdkadksacma</a>
+            </span>
+         </div>
+   
+         <div class="username-wrapper">
+            <label>Settings & Addresses</label>
+         </div>
+   
+         <mat-card class="actions-panel">
+           <form>
+              <p>
+                 <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Bitcoin Address</mat-label>
+                    <input matInput type="text" 
+                    value="xncjajwaxlflapenf"
+                    class="example-right-align">
+                    <mat-icon matSuffix>content_copy</mat-icon>
+                  </mat-form-field>
+              </p>
+              <p>
+                 <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Change Username</mat-label>
+                    <input matInput type="text" class="example-right-align">
+                  </mat-form-field>
+              </p>
+   
+              <p>
+                 <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Change Currency</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let currency_text of currencies" 
+                      [value]="currency" (click)="currency = currency_text">
+                        {{currency_text}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+              </p>
+           </form>
+         </mat-card>
+      </section>
+   </div>
 
-       <div class="address">
-          <label>Wallet Address</label>
-          <span class="address-con">
-            <img src="assets/blockstack-icon.9666d5ae.svg" class="sc-ipXKqB ZvDpE">
-            <a href="https://explorer.blockstack.org/name/" target="_blank" 
-            class="address-text">xkksakdlalkncakalfkrdkadksacma</a>
-          </span>
-       </div>
-
-       <div class="username-wrapper">
-          <label>Settings & Addresses</label>
-       </div>
-
-       <mat-card class="actions-panel">
-         <form>
-            <p>
-               <mat-form-field appearance="fill" class="w-100">
-                  <mat-label>Bitcoin Address</mat-label>
-                  <input matInput type="text" 
-                  value="xncjajwaxlflapenf"
-                  class="example-right-align">
-                  <mat-icon matSuffix>content_copy</mat-icon>
-                </mat-form-field>
-            </p>
-            <p>
-               <mat-form-field appearance="fill" class="w-100">
-                  <mat-label>Change Username</mat-label>
-                  <input matInput type="text" class="example-right-align">
-                </mat-form-field>
-            </p>
-
-            <p>
-               <mat-form-field appearance="fill" class="w-100">
-                  <mat-label>Change Currency</mat-label>
-                  <mat-select>
-                    <mat-option *ngFor="let currency_text of currencies" 
-                    [value]="currency" (click)="currency = currency_text">
-                      {{currency_text}}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-            </p>
-         </form>
-       </mat-card>
-    </section>
 </div>

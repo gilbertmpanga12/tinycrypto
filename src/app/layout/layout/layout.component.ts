@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Sidebar } from 'src/app/models/models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -12,7 +13,7 @@ import { Sidebar } from 'src/app/models/models';
 })
 export class LayoutComponent {
   title = environment.title;
-
+  deviceMatches!: boolean;
   links: Sidebar[] = [{
     name: 'Your Porfolio',
     icon: 'home',
@@ -42,10 +43,18 @@ export class LayoutComponent {
 */
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
-      map(result => result.matches),
+      map(result => {
+        this.deviceMatches  = result.matches;
+        return this.deviceMatches;
+      }),
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, private router: Router) {}
+
+  navigate(event:any, route: string){
+    if(this.deviceMatches) event.close();
+    this.router.navigate([route]);
+  }
 
 }
