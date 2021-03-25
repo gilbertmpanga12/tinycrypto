@@ -71,6 +71,13 @@ h1,h2,h3,h4,h5,h6,p,a,span,div,li,small,div,button,i, .mat-card-title{
     color: #fff !important;
 }
 
+.cursor-pointer{
+    cursor: pointer;
+}
+.outline-none{
+    outline: none !important;
+}
+
 //buttons
 .rounded-50{
     border-radius: 25px !important;
@@ -140,3 +147,4 @@ h1,h2,h3,h4,h5,h6,p,a,span,div,li,small,div,button,i, .mat-card-title{
     border-top-color: #1F2937;
     animation: spinner .8s linear infinite;
   }
+

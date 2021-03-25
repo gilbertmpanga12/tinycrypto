@@ -3,6 +3,7 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false" 
      >
     <mat-toolbar><span class="text-500"><strong>{{title}}</strong></span></mat-toolbar>
     <mat-nav-list>
@@ -25,7 +26,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>{{title}}</span>
+      <span routerLink="/" class="cursor-pointer outline-none">{{title}}</span>
       <span class="example-spacer"></span>
       <button mat-icon-button class="example-icon favorite-icon" 
       routerLink="/notifications"
