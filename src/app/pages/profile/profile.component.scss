@@ -79,9 +79,19 @@ padding: 1.5625rem;
 margin-bottom: 1.25rem;
 }
 
+.mt-10{
+    margin-top: 105;
+}
+
 .w-50{
     width: 50%;
 }
 .mx-auto{
-    margin: 0 auto;
+    margin: 10px auto;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 500px) {
+    .w-50{
+        width: 80%;
+    }
 }

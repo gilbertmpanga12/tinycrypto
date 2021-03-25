@@ -1,5 +1,8 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 import { LinkUrls } from 'src/app/models/models';
 import { DialogviewComponent } from '../dialogview/dialogview.component';
 
@@ -12,6 +15,7 @@ import { DialogviewComponent } from '../dialogview/dialogview.component';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  deviceMatches!: boolean;
   features: LinkUrls[] = [
     {
       name: 'Your Portfolio',
@@ -27,16 +31,21 @@ export class DashboardComponent implements OnInit {
     }
   ];
 
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => {
+        this.deviceMatches  = result.matches;
+        return this.deviceMatches;
+      }),
+      shareReplay()
+    );
+
   constructor(
-    public dialog: MatDialog) { }
+    public dialog: MatDialog, private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void {
   }
 
-  
-  // openBottomSheet(): void {
-  //   this._bottomSheet.open(InvestsheetmenuComponent).afterDismissed();
-  // }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogviewComponent, {

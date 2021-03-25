@@ -154,3 +154,15 @@ h1,h2,h3,h4,h5,h6,p,a,span,div,li,small,div,button,i, .mat-card-title{
     animation: spinner .8s linear infinite;
   }
 
+
+  @media only screen and (min-width: 550px) and (max-width: 800px) {
+    .card{
+        width: 400px;margin:10% auto !important;
+    }
+}
+
+@media only screen and (min-width: 1224px) {
+    .card{
+        width: 400px;margin:10% auto !important;
+    }
+ }
