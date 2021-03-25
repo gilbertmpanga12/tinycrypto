@@ -15,22 +15,23 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 
 import { ProfileComponent } from '../pages/profile/profile.component';
-import { InvestComponent } from '../pages/invest/invest.component';
 import { NotificationsComponent } from '../pages/notifications/notifications.component';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
-import { InvestsheetmenuComponent } from '../pages/invest/investsheetmenu/investsheetmenu.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogviewComponent } from '../pages/dialogview/dialogview.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
 @NgModule({
   declarations: [LayoutComponent, DashboardComponent, 
-     ProfileComponent, InvestComponent,
-     NotificationsComponent,  InvestsheetmenuComponent, DialogviewComponent],
+     ProfileComponent, 
+     NotificationsComponent, DialogviewComponent],
   imports: [
     CommonModule,
     MatSidenavModule,
@@ -50,7 +51,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatCheckboxModule,
     ReactiveFormsModule,
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatTableModule,
+    MatSortModule
+    
   ],
   entryComponents: [DialogviewComponent]
 })
