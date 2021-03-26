@@ -28,6 +28,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { ChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [LayoutComponent, DashboardComponent, 
      ProfileComponent, 
@@ -54,7 +57,9 @@ import {MatSortModule} from '@angular/material/sort';
     MatSnackBarModule,MatPaginatorModule,
     MatProgressSpinnerModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatSlideToggleModule,
+    ChartsModule
     
   ],
   entryComponents: [DialogviewComponent]

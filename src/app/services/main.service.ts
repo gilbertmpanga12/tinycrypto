@@ -38,6 +38,11 @@ export class MainService {
     localStorage.setItem('crypto_user', JSON.stringify(user));
   }
 
+  bitcoinPrice(){
+    return this.http.get(`https://min-api.cryptocompare.com/data/v2/histominute?fsym=BTC&tsym=USD&limit=119
+    &api_key=0646cc7b8a4d4b54926c74e0b20253b57fd4ee406df79b3d57d5439874960146`);
+  }
+
   
 
 }
