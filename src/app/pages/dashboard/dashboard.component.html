@@ -13,35 +13,40 @@
 
   <br/>
   <mat-card class="card-ctas" style=" border-radius: 1.25rem;">
-    <a class="flex-card" (click)="openDialog()">
-        <div class="action-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-        </div>
-        <div class="action-text">
-           <span class="span1">Buy Crypto Assets</span>
-           <span class="span-2">Invest crypto assets (Bitcoin)</span>
-        </div>
-    </a>
-    <mat-divider></mat-divider>
-    <a class="flex-card" (click)="openDialog()">
+    <div class="hover-menu-item flex-card" (click)="openDialog()">
       <div class="action-icon">
-         <mat-icon style="height: 24px !important; width: 24px !important;">payments</mat-icon>
-      </div>
-      <div class="action-text">
-         <span class="span1">Sell Your Assets</span>
-         <span class="span-2">Sell and withdraw earnings</span>
-      </div>
-  </a>
-  <mat-divider></mat-divider>
-  <a class="flex-card">
-    <div class="action-icon">
-   <img src="assets/currency_swap.svg" width="24" height="24"/>
-      </div>
-    <div class="action-text">
-       <span class="span1">Change Currency</span>
-       <span class="span-2">Switch to other currencies</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
     </div>
-</a>
+    <div class="action-text">
+       <span class="span1">Buy Crypto Assets</span>
+       <span class="span-2">Invest crypto assets (Bitcoin)</span>
+    </div>
+    </div>
+    
+    <mat-divider></mat-divider>
+
+    <div class="flex-card hover-menu-item" (click)="openDialog()">
+      <div class="action-icon">
+        <mat-icon style="height: 24px !important; width: 24px !important;">payments</mat-icon>
+     </div>
+     <div class="action-text">
+        <span class="span1">Sell Your Assets</span>
+        <span class="span-2">Sell and withdraw earnings</span>
+     </div>
+    </div>
+    
+  <mat-divider></mat-divider>
+  <div class="flex-card hover-menu-item" (click)="openDialog()">
+    <div class="action-icon">
+       
+      <mat-icon style="height: 24px !important; width: 24px !important;">swap_horizontal_circle</mat-icon>
+         </div>
+       <div class="action-text">
+          <span class="span1">Change Currency</span>
+          <span class="span-2">Switch to other currencies</span>
+       </div>
+  </div>
+  
     
   </mat-card>
 </div>
@@ -51,7 +56,7 @@
     <header class="card-header">BITCOIN PRICE </header>
     <div class="bitcoin-count-history">{{currentPrice}}</div>
     <div style="display: block;">
-      <canvas baseChart width="500" height="500" *ngIf="lineChartData.length"
+      <canvas baseChart width="500" height="270" *ngIf="lineChartData.length"
         [datasets]="lineChartData"
         [labels]="lineChartLabels"
         [options]="lineChartOptions"
@@ -61,6 +66,7 @@
         [plugins]="lineChartPlugins"
         >
       </canvas>
+      
     </div>
   </mat-card>
 </div>

@@ -111,7 +111,7 @@ export class DashboardComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogviewComponent, {
-      width: '100%',
+      width: '400px',
       data: {}
     });
 

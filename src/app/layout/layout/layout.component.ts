@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent {
+  clickedItem: string = 'home' ;
   title = environment.title;
   deviceMatches!: boolean;
   links: Sidebar[] = [{
@@ -52,7 +53,9 @@ export class LayoutComponent {
 
   constructor(private breakpointObserver: BreakpointObserver, private router: Router) {}
 
-  navigate(event:any, route: string){
+  navigate(event:any, route: string, icon:string){
+    this.clickedItem = icon;
+    console.log(this.clickedItem)
     if(this.deviceMatches) event.close();
     this.router.navigate([route]);
   }

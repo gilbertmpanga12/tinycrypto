@@ -67,6 +67,9 @@ h1,h2,h3,h4,h5,h6,p,a,span,div,li,small,div,button,i, .mat-card-title{
 .text-500{
     font-weight: 500 !important;
 }
+.text-600{
+    font-weight: 600 !important;
+}
 
 .uppercase{
     text-transform: uppercase;
@@ -78,6 +81,15 @@ h1,h2,h3,h4,h5,h6,p,a,span,div,li,small,div,button,i, .mat-card-title{
 
 .text-white{
     color: #fff !important;
+}
+
+.isActive{
+    background-color:  #ecfeff !important;
+    font-weight: 600 !important;
+    color: #1485ab !important;
+    border-radius: .375rem !important;
+    width: 97% !important;
+    margin-left: 2% !important;
 }
 
 .cursor-pointer{
@@ -120,10 +132,14 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     color: $primaryColor !important;
 }
 
-.mat-table{
+.mat-table, .mat-header-row{
     border-radius: 2.375rem !important;
     font-family: 'Poppins', sans-serif !important;
     width: 100%; 
+}
+.mat-raised-button{
+    font-family: 'Poppins', sans-serif !important;
+
 }
 
 .block-btn{

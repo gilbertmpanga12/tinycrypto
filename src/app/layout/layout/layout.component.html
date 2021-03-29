@@ -5,10 +5,12 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false" 
      >
-    <mat-toolbar><span class="text-500"><strong>{{title}}</strong></span></mat-toolbar>
+    <mat-toolbar><span class="text-600"><strong>{{title}}</strong></span></mat-toolbar>
     <mat-nav-list>
-      <mat-divider class="divider-mb"></mat-divider>
-      <mat-list-item *ngFor="let link of links" (click)="navigate(drawer, link.url)">
+      <!-- <mat-divider class="divider-mb"></mat-divider> -->
+      <mat-list-item
+      [ngClass]="{isActive: clickedItem === link.icon}"
+      *ngFor="let link of links" (click)="navigate(drawer, link.url, link.icon)">
         <mat-icon  matListIcon>{{link.icon}}</mat-icon>
        
         <a matLine class="lists" 
@@ -18,7 +20,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary" class="mat-elevation-z0">
+    <mat-toolbar style="background: #f7f7f7 !important;" class="mat-elevation-z0">
       <button
         type="button"
         aria-label="Toggle sidenav"

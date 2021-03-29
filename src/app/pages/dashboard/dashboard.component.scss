@@ -1,3 +1,5 @@
+$selected-text-color:#1485ab;
+
 .wrapper-container{
     background-color: #f7f7f7;
     height: 100%;
@@ -184,13 +186,16 @@ flex-basis: 40%;
     flex-basis: 50%;
 }
 
-// responsive design
-// @media only screen and (max-width: 768px){
-//   .w-40,w-60,.w-50{
-//       width: 100%;
-//   }
-// }
+.hover-menu-item:hover{
+    color: $selected-text-color !important;
+    // background-color:  #ecfeff !important;
+    span{
+        color: $selected-text-color !important;
+        
+    }
+   
 
+}
 
 
   @media only screen and (min-width: 320px) and (max-width: 500px) {
