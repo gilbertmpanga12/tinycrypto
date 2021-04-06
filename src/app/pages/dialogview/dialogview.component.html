@@ -1,56 +1,21 @@
 <!-- By crypto assets -->
-<ng-container *ngIf="!tradeOperation">
-  <h2 class="text-500">Invest now</h2>
-<mat-dialog-content>
-    <div class="example-container">
-
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Select currency</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let currency_text of currencies" 
-          [value]="currency" (click)="currency = currency_text.name; defaultSymbol = currency_text.symbol">
-            {{currency_text.name}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-        <mat-form-field appearance="fill" class="w-100">
-          <mat-label>Amount expected</mat-label>
-          <input matInput type="number" class="example-right-align">
-          <span matSuffix>{{defaultSymbol}}</span>
-        </mat-form-field>
-      </div>
-</mat-dialog-content>
-
-  <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-raised-button [mat-dialog-close]="true" 
-    style="border-radius: 25px !important;"
-    cdkFocusInitial color="primary">Continue</button>
-  </mat-dialog-actions>
-</ng-container>
-
-<!-- Sell crypto assets -->
-<ng-container class="relative" *ngIf="tradeOperation">
+<ng-container *ngIf="!tradeOperation && !togglePurchase">
   <button mat-icon-button aria-label="Cancel transaction" 
   [mat-dialog-close]="true">
     <mat-icon>cancel</mat-icon>
   </button>
-  <h2 class="text-500 text-center">Trade</h2>
+  <h2 class="text-500 text-center">Buy crypto assets</h2>
 <mat-dialog-content>
     <div class="example-container">
       <div class="flex-container">
         <div class="flex-inner">
           <div class="flex-currency-input">
             <div class="currency">
-              <span class="currency-icon">
+              <span class="currency-icon-total">
                 {{defaultSymbol}}
               </span>
-              <input minlength="1" inputmode="decimal" placeholder="0"
-               class="amount-input"
-              aria-label="Amount"
-              />
-              <span class="size-reference"></span>
+              <h1 class="price-btc">{{availableBtcTotal}}</h1>
+              
             </div>
           </div>
         </div>
@@ -60,29 +25,128 @@
             <span class="trade-all-cta">Trade all</span>
           </div>
         </div>
+        <br/>
       </div>
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Available total bitcoin</mat-label>
-        <input matInput type="number" class="example-right-align" value="3000" disabled>
-        <span matSuffix>{{defaultSymbol}}</span>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill" class="w-100">
-        <mat-label>Select currency for withdrawing</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let currency_text of currencies" 
-          [value]="currency" (click)="currency = currency_text.name;defaultSymbol=currency_text.symbol">
-            {{currency_text.name}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+      <form [formGroup]="buyGroup">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Enter amount to invest</mat-label>
+          <input matInput type="number" class="example-right-align" value="0"  formControlName="amount">
+          <span matSuffix>{{defaultSymbol}}</span>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Select currency for withdrawing</mat-label>
+          <mat-select formControlName="currency">
+            <mat-option *ngFor="let currency_text of currencies" 
+            [value]="currency" (click)="currency = currency_text.name;defaultSymbol=currency_text.symbol">
+              {{currency_text.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
 
         
       </div>
 </mat-dialog-content>
 
 <mat-dialog-actions>
-  <button class="sell-cta" [mat-dialog-close]="true">Preview Trade</button>
+  <button class="sell-cta" (click)="setPurchase()">Preview Trade</button>
+</mat-dialog-actions>
+<br/>
+
+
+</ng-container>
+
+<!-- Sell crypto assets -->
+<ng-container class="relative" *ngIf="tradeOperation">
+  <button mat-icon-button aria-label="Cancel transaction" 
+  [mat-dialog-close]="true">
+    <mat-icon>cancel</mat-icon>
+  </button>
+  <h2 class="text-500 text-center">Sell crypto assets</h2>
+<mat-dialog-content>
+    <div class="example-container">
+      <div class="flex-container">
+        <div class="flex-inner">
+          <div class="flex-currency-input">
+            <div class="currency">
+              <span class="currency-icon-total">
+                {{defaultSymbol}}
+              </span>
+              <h1 class="price-btc">{{finalTotalBtcConverted}}</h1>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="trade-all-container">
+          <div class="trade-all-inner">
+            <span class="trade-all-cta">Trade all</span>
+          </div>
+        </div>
+        <br/>
+      </div>
+      <form [formGroup]="sellGroup">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Enter amount to invest</mat-label>
+          <input matInput type="number" class="example-right-align" value="0"  formControlName="amount">
+          <span matSuffix>{{defaultSymbol}}</span>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Select currency for withdrawing</mat-label>
+          <mat-select formControlName="currency">
+            <mat-option *ngFor="let currency_text of currencies" 
+            [value]="currency" (click)="currency = currency_text.name;defaultSymbol=currency_text.symbol">
+              {{currency_text.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+
+        
+      </div>
+</mat-dialog-content>
+
+<p>
+  <small class="text-muted">We use TransferWise, Mobile Money for payouts, for other options contact 
+    <a href="mailto:gilbertmpanga.gm@gmail.com">support</a>.</small>
+</p>
+
+<mat-dialog-actions>
+  <button class="sell-cta" (click)="setPurchase()">Preview Trade</button>
 </mat-dialog-actions>
 <br/>
 </ng-container>
+
+<!-- Calculate amount in btc and purchase -->
+
+<ng-container class="relative" *ngIf="togglePurchase">
+  <button mat-icon-button aria-label="Cancel buying bitcoin" 
+  (click)="undoPurchase()">
+    <mat-icon>undo</mat-icon>
+  </button>
+  <h2 class="text-500 text-center">Your investment is worth</h2>
+<mat-dialog-content>
+    <div class="example-container">
+      <div class="flex-container">
+        <div class="flex-inner">
+          <span class="currency-icon-total">
+            {{defaultSymbol}}
+          </span>
+         <h1 class="btc-converted-total">30000</h1>
+        </div>
+
+        </div>
+   
+
+        
+      </div>
+</mat-dialog-content>
+<br/>
+<mat-dialog-actions>
+  <button class="sell-cta" (click)="buyBtc()">Buy now</button>
+</mat-dialog-actions>
+<br/>
+</ng-container>
+
