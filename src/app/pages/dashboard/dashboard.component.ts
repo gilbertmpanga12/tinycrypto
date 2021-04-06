@@ -109,10 +109,10 @@ export class DashboardComponent implements OnInit {
   }
 
 
-  openDialog(): void {
+  openDialog(trade: boolean): void {
     const dialogRef = this.dialog.open(DialogviewComponent, {
       width: '400px',
-      data: {}
+      data: {trade:trade}
     });
 
     dialogRef.afterClosed().subscribe(result => {

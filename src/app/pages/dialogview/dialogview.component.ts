@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialogview',
@@ -7,11 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogviewComponent implements OnInit {
   hide = true;
-  currencies: string[] = ['UGX', 'USD', 'GBP', 'EUR'];
+  defaultSymbol: string = '$';
+  tradeOperation: boolean;
+  currencies: {name: string, symbol:string}[] = [
+    {name: 'USD', symbol: '$'},
+    {name: 'UGX', symbol: 'UGX'},
+    {name: 'GDB', symbol: '£'},
+    {name: 'EUR', symbol: '€'}
+  ];
   currency: string = 'UGX';
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<DialogviewComponent>, 
+    @Inject(MAT_DIALOG_DATA) public data: {trade: boolean}) {
+      this.tradeOperation = this.data.trade;
+     }
 
   ngOnInit(): void {
+    
   }
+
+
 
 }
