@@ -1,6 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Actions } from 'src/app/models/models';
+
+import { WarningComponent } from 'src/app/shared/warning/warning/warning.component';
 
 @Component({
   selector: 'app-dialogview',
@@ -24,7 +27,8 @@ export class DialogviewComponent implements OnInit {
   ];
   currency: string = 'UGX';
   constructor(public dialogRef: MatDialogRef<DialogviewComponent>, 
-    @Inject(MAT_DIALOG_DATA) public data: {trade: boolean}, private _fb: FormBuilder) {
+    @Inject(MAT_DIALOG_DATA) public data: {trade: boolean}, 
+    private _fb: FormBuilder, private dialog: MatDialog) {
       this.tradeOperation = this.data.trade;
       this.sellGroup = this._fb.group({
         amount: [''],
@@ -67,7 +71,7 @@ export class DialogviewComponent implements OnInit {
   }
 
   buyBtc(): void{
-    
+    this.dialog.open(WarningComponent, {data: {action: Actions.Buying}});
   }
 
 }

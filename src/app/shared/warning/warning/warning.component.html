@@ -1,1 +1,6 @@
-<p>warning works!</p>
+<h1>Are you sure you want to proceed with {{operation}}</h1>
+
+<mat-dialog-actions  align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button (click)="submitAction()" cdkFocusInitial>Yes, buy</button>
+</mat-dialog-actions>

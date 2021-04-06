@@ -28,3 +28,7 @@ export interface FirebaseUser{
     localId: string;
 }
 
+export enum Actions{
+    Buying = 'Buying crypto assets',
+    Selling = 'Selling crypto assets'
+}

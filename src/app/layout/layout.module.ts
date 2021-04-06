@@ -30,6 +30,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { ChartsModule } from 'ng2-charts';
+import { WarningModule } from '../shared/warning/warning.module';
 
 @NgModule({
   declarations: [LayoutComponent, DashboardComponent, 
@@ -59,7 +60,8 @@ import { ChartsModule } from 'ng2-charts';
     MatTableModule,
     MatSortModule,
     MatSlideToggleModule,
-    ChartsModule
+    ChartsModule,
+    WarningModule
     
   ],
   entryComponents: [DialogviewComponent]
